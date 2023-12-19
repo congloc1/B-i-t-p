@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="diem1" placeholder="điểm giữa kỳ">
+<input id="diem2" placeholder="điểm cuối kỳ">
+<button onclick="check()">Kiểm tra</button>
+<p id="diem"></p>
+
+</body>
+</html>
+
+<script>
+    function check() {
+        let a=parseInt(document.getElementById("diem1").value);
+        let b=parseInt(document.getElementById("diem2").value);
+        if ((a+b*2)/3>9){
+            document.getElementById("diem").innerHTML="Loại giỏi"
+        }
+        else {
+            if ((a+b*2)/3>=7){
+                document.getElementById("diem").innerHTML="Loại khá"
+
+            }
+            else {
+                if ((a+b*2)/3>=5){
+                    document.getElementById("diem").innerHTML="Loại trung bình"
+                }
+                else document.getElementById("diem").innerHTML="Loại kém"
+            }
+        }
+
+    }
+
+</script>

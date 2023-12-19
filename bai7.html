@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="cuoc1" placeholder="số phút gọi trong nước">
+<input id="cuoc2" placeholder="số phút gọi nước ngoài">
+<button onclick="check()">Thành tiền</button>
+<p id="trongn"></p>
+<p id="ngoain"></p>
+<p id="tong"></p>
+</body>
+</html>
+<script>
+    function check() {
+        let a=parseInt(document.getElementById("cuoc1").value);
+        let b=parseInt(document.getElementById("cuoc2").value);
+        document.getElementById("trongn").innerHTML="trong nước :"+(a*2000)+"VNĐ";
+        document.getElementById("ngoain").innerHTML="nước ngoài :"+(a*5000)+"VNĐ"
+        document.getElementById("tong").innerHTML="Tổng :" +(a*2000+a*5000)+"VNĐ"
+
+    }
+</script>

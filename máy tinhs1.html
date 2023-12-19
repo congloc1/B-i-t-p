@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th><input id="soA"></th>
+        <th><input id="soB"></th>
+    </tr>
+    <tr>
+        <th><button onclick="cong()">Addition(+)</button> </th>
+        <th><button onclick="tru()">Subtraction(-)</button> </th>
+        <th><button onclick="nhan()">Multiplication(X)</button> </th>
+        <th><button onclick="chia()">Division(/)</button> </th>
+
+    </tr>
+</table>
+<p id="ketqua"></p>
+
+</body>
+</html>
+<script>
+    function cong() {
+        let a=parseInt(document.getElementById("soA").value);
+        let b=parseInt(document.getElementById("soB").value);
+        document.getElementById("ketqua").innerHTML="kết quả : "+ (a+b)
+
+
+    }
+    function tru() {
+        let a=parseInt(document.getElementById("soA").value);
+        let b=parseInt(document.getElementById("soB").value);
+        document.getElementById("ketqua").innerHTML="kết quả : "+ (a-b)
+
+
+    }
+    function nhan() {
+        let a=parseInt(document.getElementById("soA").value);
+        let b=parseInt(document.getElementById("soB").value);
+        document.getElementById("ketqua").innerHTML="kết quả : "+ (a*b)
+
+
+    }
+    function chia() {
+        let a=parseInt(document.getElementById("soA").value);
+        let b=parseInt(document.getElementById("soB").value);
+        document.getElementById("ketqua").innerHTML="kết quả : "+ (a/b)
+
+
+    }
+
+</script>

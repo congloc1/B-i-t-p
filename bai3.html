@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="soA" placeholder="nhập số nguyên">
+<button onclick="check()">Kiểm tra</button>
+<p id="songuyen"></p>
+
+</body>
+</html>
+<script>
+    function check() {
+        let inputsoA=document.getElementById("soA");
+        let a=parseInt(inputsoA.value)
+        if (a>0)
+            document.getElementById("songuyen").innerHTML=a + "là số nguyên lớn hơn 0 ";
+        else
+            document.getElementById("songuyen").innerHTML=a + "là số nguyên nhỏ hơn 0 ";
+
+    }
+</script>
