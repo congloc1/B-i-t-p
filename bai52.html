@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>TÌM X PHƯƠNG TRÌNH BẬC 1</h1>
+<input id="soA" placeholder="nhập a">
+<input id="soB" placeholder="nhập b">
+<button onclick="check()">Tìm X</button>
+<p id="timX"></p>
+
+</body>
+</html>
+<script>
+    function check() {
+        let a= parseInt(document.getElementById("soA").value);
+        let b= parseInt(document.getElementById("soB").value);
+        let x=-b/a
+        if (a===0){
+            if(b===0){
+                document.getElementById("timX").innerHTML="X Vô số nghiệm"
+            }
+            else
+                document.getElementById("timX").innerHTML="PT Vô nghiệm"
+        }
+        else
+            document.getElementById("timX").innerHTML="X bằng : " +x
+
+
+    }
+</script>

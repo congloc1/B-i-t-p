@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>GIẢI PHƯƠNG TRÌNH BẬC 2</h1>
+<input id="soa" placeholder="nhập a">
+<input id="sob" placeholder="nhập b">
+<input id="soc" placeholder="nhập c">
+<button onclick="check()">Tìm X</button>
+<p id="x"></p>
+
+
+</body>
+</html>
+<script>
+  function check() {
+    let a=parseInt(document.getElementById("soa").value);
+    let b=parseInt(document.getElementById("sob").value);
+    let c=parseInt(document.getElementById("soc").value);
+    let x1=-b/(2*a)
+    let denta=b*b-4*a*c;
+    let candenta=Math.sqrt(b*b-4*a*c)
+    let x12=(-b+candenta)/(2*a)
+    let x22=(-b-candenta)/(2*a)
+    if(denta<0){
+      document.getElementById("x").innerHTML="PT vô nghiệm"
+    }
+    else {
+      if(denta===0){
+        document.getElementById("x").innerHTML="PT có nghiệm kép X1,X2 bằng : "+ x1
+      }
+      else {
+        document.getElementById("x").innerHTML="PT có 2 nghiệm là : " +x12+ " và" + x22
+      }
+    }
+
+
+  }
+</script>
