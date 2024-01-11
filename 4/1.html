@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div align="center">
+    <canvas id="canvas" width="500" height="500" style="border: 1px solid #d3d3d3; ">ABC</canvas>
+</div>
+<script>
+    let c = document.getElementById("canvas");
+    let ctx = c.getContext("2d");
+
+    function draw(x, y) {
+        if (x === 450) {
+            speed = 0;
+            speed1 = 2;
+        }
+        if (y === 450) {
+            speed1 = 0;
+            speed = -2;
+        }
+        if (x === 0 && y === 450) {
+            speed = 0;
+            speed1 = -2;
+        }
+        if (x === 0 && y === 0) {
+            speed = 2;
+            speed1 = 0
+        }
+        ctx.fillRect(x, y, 50, 50);
+    }
+    function clear() {
+        ctx.clearRect(0, 0, 500, 500);
+    }
+    let x = 0;
+    let y = 0;
+    let speed ;
+    let speed1 ;
+
+    // draw(x,y)
+    function abc() {
+        clear();
+        draw(x, y);
+        x += speed;
+        y += speed1;
+
+    }
+
+    setInterval(abc, 10);
+
+
+</script>
+</body>
+</html>
+

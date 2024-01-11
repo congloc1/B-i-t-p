@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+    let a = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let b = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+    chuoi = prompt("nhap");
+
+    function check() {
+        let c = 0;
+        for (i = 0; i < a.length; i++) {
+            if (chuoi == a[i]) {
+                return b[i];
+            }
+        }
+        return "No"
+    }
+
+    alert(check());
+</script>

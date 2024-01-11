@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img {
+            width: 100px;
+            height: 60px;
+        }
+        .ok {
+            float: right;
+            background-color: navajowhite;
+        }
+        .no h2{
+            position: absolute;
+            top:150px;
+            left: 500px;
+            color: yellow;
+            font-size: 50px;
+        }
+        .yes th {
+            background-color: chartreuse;
+        }
+    </style>
+</head>
+<body style="background-color: darkseagreen">
+<span class="no">
+    <img src="https://hoanghamobile.com/tin-tuc/wp-content/uploads/2023/07/anh-phong-canh-dep-7.jpg" style="  width: 100% ; height: 300px"; >
+    <h2> Quản lý khách hàng</h2>
+</span>
+<!--<img style="width: 750px;height: 500px; float: right" src="https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/391668199_2970045066464007_5778220068057237897_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=783fdb&_nc_eui2=AeERPeiygzhEecmq3NfwewzpTxC39uY27sxPELf25jbuzByK1wmG1wXbzJLqLD0usSXCeKouUxjSGPGGZiMqeCTK&_nc_ohc=jWt__oqt3qgAX8orXby&_nc_ht=scontent.fhan17-1.fna&oh=00_AfAQW0w2o8_LVfacEHFuDDRtu9wsDFSYECVQh13GQZ3Ttw&oe=65A345D1">-->
+<!--<img style="width: 750px;height: 500px" src="https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/293296825_178575261226978_7218451785256975815_n.jpg?stp=cp6_dst-jpg&_nc_cat=100&ccb=1-7&_nc_sid=783fdb&_nc_eui2=AeHYBoaMC7NWCd1IEvdFRVElSDOuSXparZVIM65JelqtlS_S4UtRjpiB_j6_KmehonGW_bBcrmfBdUqZ6Ewm2_Tq&_nc_ohc=FQiVXv7hSeMAX9JdRdb&_nc_ht=scontent.fhan17-1.fna&oh=00_AfCEOm-RbANPxCslpELV9a7Fzn20oxfmtQHX_AGQXrh2Qw&oe=65A2A140">-->
+
+<table border="1px" style="width: 400px;height: 200px; float: left; background-color: aliceblue" >
+    <tr>
+        <th colspan="2" style="background-color: brown; ">Thông tin khách hàng</th>
+    </tr>
+    <tr>
+        <th>Tên</th>
+        <th><input id="1" placeholder="nhập tên khách hàng"></th>
+    </tr>
+    <tr>
+        <th>Quốc tịch</th>
+        <th><input id="2" placeholder="nhập địa chỉ"></th>
+    </tr>
+    <tr>
+        <th>sđt</th>
+        <th><input id="3" placeholder="nhập sđt"></th>
+    </tr>
+    <tr>
+        <th>anh</th>
+        <th><input id="4" placeholder="link anh"></th>
+    </tr>
+    <tr>
+        <th colspan="2">
+            <button style="background-color: yellow" onclick="nhap()">Add</button>
+            <button style="background-color: coral" onclick="reset()">reset</button>
+        </th>
+    </tr>
+</table>
+<div class="ok">
+<table  style=" border: 1px solid black; width: 700px; float: right" >
+    <tr>
+        <th colspan="6">Danh sách khách hàng</th>
+    </tr>
+    <tr>
+        <th>stt</th>
+        <th>Tên</th>
+        <th>Quốc Tịch</th>
+        <th>sđt</th>
+        <th>Ảnh</th>
+        <th>tùy chọn</th>
+    </tr>
+    <tbody class="yes" id="abc">
+
+    </tbody>
+    </table>
+</div>
+<button onclick="abc()">Tim kiem</button>
+<input id="z">
+<h3 id="s"></h3>
+</body>
+</html>
+<script>
+    class khach {
+        stt;
+        ten;
+        diachi;
+        sdt;
+        anh;
+        constructor(stt, ten, diachi, sdt, anh) {
+            this.stt = stt;
+            this.ten = ten;
+            this.diachi = diachi;
+            this.sdt = sdt;
+            this.anh = anh;
+        }
+    }
+
+    let a1 = new khach("1", "A", "Trung Quốc", "0983271311", "https://anhvienpiano.com/wp-content/uploads/2020/05/anh-chan-dung.jpg");
+    let a2 = new khach("2", "B", "Nhat Ban", "0983271311", "https://www.chapter3d.com/wp-content/uploads/2020/08/anh-chan-dung.jpg");
+    let a3 = new khach("3", "C", "Han Quốc", "0983271311", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwCpGWDQxaA-mkHT_MaXb1K1nqQm24dg7_XA&usqp=CAU");
+    let a = [a1, a2, a3];
+
+    function check() {
+        let text = "";
+        for (i = 0; i < a.length; i++) {
+            text = text +
+                `<tr>
+            <th>${i + 1}</th>
+            <th>${a[i].ten}</th>
+            <th>${a[i].diachi}</th>
+            <th>${a[i].sdt}</th>
+            <th><img src=${a[i].anh}></th>
+            <th>
+                <button style="background-color: red" onclick="delete1(${i})">delete</button>
+            </th>
+        </tr>`
+        }
+        document.getElementById("abc").innerHTML = text
+    }
+    check();
+    function nhap() {
+        let b1 = document.getElementById("1").value;
+        let b2 = document.getElementById("2").value;
+        let b3 = document.getElementById("3").value;
+        let b4 = document.getElementById("4").value;
+        let b=new khach("",b1,b2,b3,b4);
+        a.push(b);
+        check();
+    }
+    function reset() {
+        document.getElementById("1").value="";
+        document.getElementById("2").value="";
+        document.getElementById("3").value="";
+        document.getElementById("4").value="";
+    }
+    function delete1(aq) {
+        a.splice(aq,1);
+        check();
+    }
+    function abc() {
+        let z = document.getElementById("z").value;
+        for (i = 0; i < a.length; i++) {
+            if (z == a[i].ten) {
+                document.getElementById("s").innerHTML= "quoc tich  :  "+ a[i].diachi
+            }
+        }
+    }
+</script>
